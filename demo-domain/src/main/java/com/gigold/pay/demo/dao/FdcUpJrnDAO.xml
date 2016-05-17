@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2009-2012 the original author or authors. Licensed under the 
+	Apache License, Version 2.0 (the "License"); you may not use this file except 
+	in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+	Unless required by applicable law or agreed to in writing, software distributed 
+	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES 
+	OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
+	the specific language governing permissions and limitations under the License. -->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		<mapper namespace="com.gigold.pay.demo.dao.FdcUpJrnDAO">
+		
+			<resultMap type="com.gigold.pay.demo.bo.FdcUpJrn" id="fdcUpJrnMap">
+				<id property="id" column="ID" />
+				<result property="fdcJrnNo" column="FDC_JRN_NO" />
+				<result property="amt" column="AMT" />
+				<result property="jrnType" column="JRN_TYPE" />
+				<result property="currency" column="CURRENCY" />
+				<result property="routeBankCode" column="ROUTE_BANK_CODE" />
+				<result property="orgSendBankJrnNo" column="ORG_SEND_BANK_JRN_NO" />
+				<result property="sendBankJrnNo" column="SEND_BANK_JRN_NO" />
+				<result property="rtnBankJrnNo" column="RTN_BANK_JRN_NO" />
+				<result property="jrnStatus" column="JRN_STATUS" />
+				<result property="rtnBankCode" column="RTN_BANK_CODE" />
+				<result property="rtnBankDesc" column="RTN_BANK_DESC" />
+				<result property="tmCreate" column="TM_CREATE" />
+				<result property="tmFinish" column="TM_FINISH" />
+				<result property="bankCardType" column="BANK_CARD_TYPE" />
+				<result property="acctRelResult" column="ACCT_REL_RESULT" />
+				<result property="bankMerId" column="BANK_MER_ID" />
+				<result property="bankClearDt" column="BANK_CLEAR_DT" />
+				<result property="bankClearCur" column="BANK_CLEAR_CUR" />
+				<result property="bankClearAmt" column="BANK_CLEAR_AMT" />
+				<result property="bankTraceNo" column="BANK_TRACE_NO" />
+				<result property="tmBankTrace" column="TM_BANK_TRACE" />
+				<result property="acDt" column="AC_DT" />
+				<result property="acctCmpDt" column="ACCT_CMP_DT" />
+				<result property="status" column="STATUS" />
+				<result property="tmSmp" column="TM_SMP" />
+				<result property="bankTn" column="BANK_TN" />
+				<result property="tmNotify" column="TM_NOTIFY" />
+				<result property="notifyCount" column="NOTIFY_COUNT" />
+				<result property="bankCardNo" column="BANK_CARD_NO" />
+			</resultMap>
+
+			
+			<select id="getFdcUpJrnById"  resultMap="fdcUpJrnMap">
+				<![CDATA[  
+		            SELECT * 
+		            FROM T_FDC_UP_JRN 
+		            WHERE ID =  #{id} 
+		           
+		        ]]>
+			</select>
+	
+		
+		
+		</mapper>
